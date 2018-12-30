@@ -41,8 +41,8 @@ router.post('/recordMain', function (req, res) {
             status: 'success',
         });
     })
-    .catch(e => setImmediate((e) => {
-        console.log(typeof e) 
+    .catch(e => setImmediate(() => {
+        throw e 
         return res.status(500).json({
         status: 'error',
     });}))
