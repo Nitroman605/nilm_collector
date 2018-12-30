@@ -34,7 +34,7 @@ router.post('/recordMain', function (req, res) {
     [Math.max(req.body.ActiveWatts[1],0), Math.max(req.body.ReactivePower[1],0), Math.max(req.body.ApparentPower[1],0),Math.max(req.body.Current[1],0),Math.max(req.body.Voltage[1],0),Math.max(req.body.CosPhi[1],0),Math.max(req.body.Frequency[1],0),Math.max(req.body.PowerFactor[1],0),Math.max(req.body.ActiveEnergy[1],0),
     Math.max(req.body.ActiveWatts[2],0), Math.max(req.body.ReactivePower[2],0), Math.max(req.body.ApparentPower[2],0),Math.max(req.body.Current[2],0),Math.max(req.body.Voltage[2],0),Math.max(req.body.CosPhi[2],0),Math.max(req.body.Frequency[2],0),Math.max(req.body.PowerFactor[2],0),Math.max(req.body.ActiveEnergy[2],0),
     Math.max(req.body.ActiveWatts[3],0), Math.max(req.body.ReactivePower[3],0), Math.max(req.body.ApparentPower[3],0),Math.max(req.body.Current[3],0),Math.max(req.body.Voltage[3],0),Math.max(req.body.CosPhi[3],0),Math.max(req.body.Frequency[3],0),Math.max(req.body.PowerFactor[3],0),Math.max(req.body.ActiveEnergy[3],0),])
-    .then(res => {
+    .then(pgRes => {
         return res.status(200).json({
             status: 'success',
         });
@@ -51,7 +51,7 @@ router.post('/recordAC', function (req, res) {
     pool.query('INSERT INTO AC(time, activewatt, reactivepower, apparentpower, current, voltage, cosphi, frequency, powerfactor, activeenergy)'
     + 'VALUES(date_trunc(\'second\', NOW()),$1,$2,$3,$4,$5,$6,$7,$8,$9)',
     [Math.max(req.body.ActiveWatts[1],0), Math.max(req.body.ReactivePower[1],0), Math.max(req.body.ApparentPower[1],0),Math.max(req.body.Current[1],0),Math.max(req.body.Voltage[1],0),Math.max(req.body.CosPhi[1],0),Math.max(req.body.Frequency[1],0),Math.max(req.body.PowerFactor[1],0),Math.max(req.body.ActiveEnergy[1],0)])
-    .then(res => {
+    .then(pgRes => {
         return res.status(200).json({
             status: 'success',
         });
