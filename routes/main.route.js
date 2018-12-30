@@ -20,7 +20,7 @@ router.post('/testData', function (req, res) {
 });
 
 router.post('/recordMain', function (req, res) {
-    
+    console.log(req.body)
     pool.query('WITH time1 AS ('
     + 'INSERT INTO mainP1(time, activewatt, reactivepower, apparentpower, current, voltage, cosphi, frequency, powerfactor, activeenergy)'
     + 'VALUES(date_trunc(\'second\', NOW()),$1,$2,$3,$4,$5,$6,$7,$8)'
