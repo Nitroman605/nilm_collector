@@ -19,7 +19,7 @@ app.all("/*", function (req, res, next) {
 });
 app.use('/main', main);
 app.get('/', function (req, res) {
-    res.send('hello world')
+    res.send('NILM Data Collector is Running !')
 })
 app.listen(PORT, function(){
     console.log('Server is running on Port',PORT);
