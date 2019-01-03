@@ -46,6 +46,7 @@ router.post('/recordMain', function (req, res) {
     });}))
 });
 */
+
 router.post('/recordMain', function (req, res) {
     res.status(200).json({
         status: 'success',
@@ -73,7 +74,7 @@ router.post('/recordMain', function (req, res) {
 });
 
 router.post('/recordAC', function (req, res) {
-    /*res.status(200).json({
+    res.status(200).json({
         status: 'success',
     });
     pool.query('INSERT INTO AC(time, activewatt, reactivepower, apparentpower, current, voltage, cosphi, frequency, powerfactor, activeenergy)'
@@ -83,11 +84,7 @@ router.post('/recordAC', function (req, res) {
 
     })
     .catch(e => setImmediate(() => {     
-       }))*/
-    console.log(req.body)
-    res.status(200).json({
-        status: 'success',
-    });
+       }))
 });
 
 
