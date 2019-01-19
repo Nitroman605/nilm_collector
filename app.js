@@ -3,7 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const main = require('./routes/main.route');
 
-const PORT = 80;
+const PORT = 3000;
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.all("/*", function (req, res, next) {
