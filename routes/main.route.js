@@ -48,6 +48,7 @@ router.post('/recordMain', function (req, res) {
 */
 
 router.post('/recordMain', function (req, res) {
+    console.log(req.body)
     res.status(200).json({
         status: 'success',
     });
